@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+body {
+  background-color: var(--inkblot-semantic-color-background-primary);
+  color: var(--inkblot-semantic-color-text-primary);
+  font-family: var(--inkblot-typography-font-family-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Marketing/Contacts-style compact toolbar search (32px row height, token-driven, subtle chrome). */
+@layer components {
+  .crm-toolbar-search {
+    height: 2rem;
+    min-height: 2rem;
+    border-radius: var(--inkblot-radius-lg);
+    border: 1px solid transparent;
+    background-color: var(--inkblot-semantic-color-background-tertiary);
+    font-size: var(--inkblot-typography-font-size-sm, 0.875rem);
+    padding-left: var(--inkblot-spacing-3, 0.75rem);
+    padding-right: var(--inkblot-spacing-3, 0.75rem);
+  }
+
+  .crm-toolbar-search::placeholder {
+    color: var(--inkblot-semantic-color-text-secondary);
+  }
+
+  .crm-toolbar-search:focus {
+    outline: none;
+    border-color: var(--inkblot-semantic-color-border-focus);
+    box-shadow: 0 0 0 1px var(--inkblot-semantic-color-border-focus);
+  }
+}
+
+@layer utilities {
+  .glass {
+    background: var(--inkblot-semantic-color-background-secondary);
+    border: 1px solid var(--inkblot-semantic-color-border-default);
+    box-shadow: var(--inkblot-shadow-sm);
+  }
+
+  .glass-hover:hover {
+    background: var(--inkblot-semantic-color-interactive-secondary-hover);
+  }
+
+  .surface-2 {
+    background-color: var(--inkblot-semantic-color-background-tertiary);
+  }
+
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .animate-shimmer {
+    animation: shimmer 1.5s ease-in-out infinite;
+    background: linear-gradient(
+      90deg,
+      var(--inkblot-semantic-color-background-secondary) 25%,
+      var(--inkblot-semantic-color-background-tertiary) 50%,
+      var(--inkblot-semantic-color-background-secondary) 75%
+    );
+    background-size: 200% 100%;
+  }
+}
