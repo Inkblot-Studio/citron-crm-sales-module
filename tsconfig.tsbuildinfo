@@ -1,1 +1,1 @@
-{"root":["./src/app.tsx","./src/main.tsx","./src/sales/saleswithprovider.tsx","./vite-env.d.ts"],"version":"5.9.3"}
+{"root":["./src/app.tsx","./src/main.tsx","./src/lib/supabase.ts","./src/lib/tenant.ts","./src/sales/saleswithprovider.tsx","./src/sales/intake/intaketab.tsx","./src/sales/intake/api.ts","./src/sales/intake/types.ts","./src/utils/supabase/client.ts","./src/utils/supabase/middleware.ts","./src/utils/supabase/server.ts","./vite-env.d.ts"],"version":"5.9.3"}

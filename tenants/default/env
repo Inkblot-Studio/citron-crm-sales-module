@@ -1,0 +1,3 @@
+# Default tenant (Citron sales module)
+# This file is copied to project root as .env.local by scripts/inject_tenant_config.sh
+VITE_TENANT=default

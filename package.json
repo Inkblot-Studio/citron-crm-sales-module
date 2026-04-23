@@ -6,11 +6,15 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "preview": "vite preview --port 5001"
+    "preview": "vite preview --port 5001",
+    "hillcode": "tsx devtools/hillcode/src/main.ts",
+    "supabase:deploy-webhook": "npx supabase@latest functions deploy intake-webhook --project-ref yafjironosuhvielaauz --no-verify-jwt --use-api"
   },
   "dependencies": {
     "@citron-systems/citron-ds": "^1.0.0",
     "@citron-systems/citron-ui": "^1.16.0",
+    "@supabase/ssr": "^0.10.2",
+    "@supabase/supabase-js": "^2.104.1",
     "lucide-react": "^0.575.0",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
@@ -25,6 +29,7 @@
     "autoprefixer": "^10.4.24",
     "postcss": "^8.5.6",
     "tailwindcss": "^3.4.19",
+    "tsx": "^4.19.0",
     "typescript": "^5.9.3",
     "vite": "^7.3.1"
   }

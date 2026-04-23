@@ -2,3 +2,12 @@ node_modules
 dist
 *.local
 .DS_Store
+.env
+.env.*
+!.env.example
+.hillcode-tenant
+supabase/.temp
+mcp-edge-deploy*.json
+.deploy-payload.json
+deploy-args-escaped.json
+

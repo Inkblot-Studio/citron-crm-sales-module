@@ -26,3 +26,15 @@ const Sales = lazy(() => import('sales/Sales'))
 - `@citron-systems/citron-ui` (components)
 
 All UI strings are in English.
+
+## HillCode (dev TUI / white-label env)
+
+Interactive menu + inject per-tenant `VITE_*` into `.env.local` before dev/build/preview/deploy.
+
+```bash
+npm run hillcode
+npm run hillcode -- -c default --cmd build
+./build dev default
+```
+
+Details: [instructions/CITRON_HILLCODE.md](instructions/CITRON_HILLCODE.md) · [guides/HILLCODE_UNIVERSAL_GUIDE.md](guides/HILLCODE_UNIVERSAL_GUIDE.md)

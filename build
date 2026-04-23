@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+# Build / run (Citron HillCode adapt). Usage: ./build <dev|build|preview|deploy> <tenant>
+# Runs inject, then the matching npm target (same as hillcode TUI/CLI).
+set -e
+
+PLATFORM="${1:?Usage: $0 <dev|build|preview|deploy> [tenant]}"
+TENANT="${2:-default}"
+ROOT="$(cd "$(dirname "$0")" && pwd)"
+cd "$ROOT"
+
+bash "$ROOT/scripts/inject_tenant_config.sh" "$TENANT"
+
+case "$PLATFORM" in
+  dev)
+    exec npm run dev
+    ;;
+  build)
+    exec npm run build
+    ;;
+  preview)
+    exec npm run preview
+    ;;
+  deploy)
+    exec npx --yes vercel deploy --prod
+    ;;
+  *)
+    echo "Usage: $0 <dev|build|preview|deploy> [tenant]" >&2
+    exit 1
+    ;;
+esac
